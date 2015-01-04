@@ -21,10 +21,10 @@ Let's say you're creating a grid users can navigate through. Each grid is a div 
 `data-focus-col` - This is the column of this element
 
 When a given element is navigated to, the class `keyboard-focus` is enabled. You can customize the design of the navigation by applying a style:
-    
-  div .keyboard-focus {
-    border: solid 1px blue;
-  }
+
+    div .keyboard-focus {
+       border: solid 1px blue;
+    }
 
 Then, users know which item is currently in focus.
 
@@ -33,11 +33,11 @@ This class is removed when a different item is navigated to.
 ### Item Trigger
 The `ENTER key` can be used to select a given item. Perhaps each item in the grid leads you to a different action. When the user selects a given item, something happens. Pressing the enter key triggers a `keyboard-enetr` event for the given element. So, to do a certain action:
 
-  $('div').on('keyboard-enter', function() {
-    var r = $(this).attr('data-focus-row');
-    var c = $(this).attr('data-focus-col');
-    console.log("Item "+row+" x "+c+" was clicked");
-  });
+    $('div').on('keyboard-enter', function() {
+        var r = $(this).attr('data-focus-row');
+        var c = $(this).attr('data-focus-col');
+        console.log("Item "+row+" x "+c+" was clicked");
+    });
   
 ### Overflow Trigger
 Let's say you have a lefthand menu. When the user gets all the way to the left, you want to open this menu. When the user tries to go beyond the bounds of a given set, a `leftCol` event is triggered with a parameter of the current row. Additionally, a `rightCol` event may be triggered on the other side.
